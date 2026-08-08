@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define CLIT_VERSISON "Clit verison 1.0.0"
+#define CLIT_VERSION "Clit verison 1.0.0"
 
 void show_version(){
     printf("%s\n", CLIT_VERSION);
