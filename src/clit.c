@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define CLIT_VERISON "Clit verison 1.0.0"
+#define CLIT_VERSISON "Clit verison 1.0.0"
 
 void show_version(){
     printf("%s\n", CLIT_VERSION);
@@ -18,7 +18,7 @@ void show_help(){
 }
 
 int main(int argc, char *argv[]){
-    if(argv >= 2){
+    if(argc >= 2){
         if(strcmp(argv[1], "-h") == 0){
             show_help();
             return 0;
