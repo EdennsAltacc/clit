@@ -154,6 +154,34 @@ int main(int argc, char *argv[]) {
 
             return 0;
 
+        } else if (strcmp(argv[1], "crun") == 0) {
+            #if defined(_WIN32) || defined(_WIN64)
+            
+            char command[124];
+
+            snprintf(
+                command,
+                sizeof(command),
+                "gcc %s -o compiled.exe && compiled.exe && del compiled.exe",
+                argv[2];
+            );
+
+            system(command);
+            return 0;
+
+            #endif
+
+            char command[124];
+
+            snprintf(
+                command,
+                sizeof(command),
+                "gcc %s -o compiled && ./compiled && rm -f compiled",
+                argv[2];
+            );
+
+            system(command);
+            return 0;
         } else {
             printf("Invalid argument: %s\n", argv[1]);
             return 1;
