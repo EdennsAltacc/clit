@@ -51,6 +51,33 @@ int main(int argc, char *argv[]) {
             return 0;
 
         } else if (strcmp(argv[1], "fetch") == 0) {
+            #if defined(_WIN32) || defined(_WIN64)
+
+            #include <windows.h>
+            #include <urlmon.h>
+
+            #pragma comment(lib, "urlmon.lib")
+
+            char *url = NULL;
+            char *outfile_name = NULL;
+
+            for (int argi = 2; argi < argc; argi++){
+                if (strcmp(argv[argi], "-u") == 0 && argi + 1 < argc) {
+                    url = argv[++argi];
+                } else if (strcmp(argv[argi], "-o") == 0 && argi + 1 < argc) {
+                    outfile_name = argv[++argi];
+                }
+            }
+
+            HRESULT result = URLDownloadToFile(NULL, url, outfile_name, 0, NULL);
+            if (result != S_OK) {
+                printf("Download failed. Error code: 0x%08X\n", result);
+                return 1;
+            }
+
+            return 0;
+            #endif
+
             char *outfile_name = NULL;
             char *url = NULL;
 
