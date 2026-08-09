@@ -163,7 +163,7 @@ int main(int argc, char *argv[]) {
                 command,
                 sizeof(command),
                 "gcc %s -o compiled.exe && compiled.exe && del compiled.exe",
-                argv[2];
+                argv[2]
             );
 
             system(command);
@@ -177,7 +177,7 @@ int main(int argc, char *argv[]) {
                 command,
                 sizeof(command),
                 "gcc %s -o compiled && ./compiled && rm -f compiled",
-                argv[2];
+                argv[2]
             );
 
             system(command);
