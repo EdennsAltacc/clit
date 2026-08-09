@@ -8,7 +8,7 @@
 #include <curl/curl.h>
 #include <stdlib.h>
 
-#define CLIT_VERSION "Clit version 1.0.2\nFetch version 1.0.1\nmkcd version 1.0.1"
+#define CLIT_VERSION "Clit version 1.0.3\nFetch version 1.0.1\nmkcd version 1.0.1\ncrun version 1.0.1"
 
 char *operatingsys = NULL;
 
